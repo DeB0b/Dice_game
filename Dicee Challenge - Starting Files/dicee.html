@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="images/dice6.png">
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="images/dice6.png">
+      </div>
+
+    </div>
+
+
+  </body>
+
+  <footer>
+    Enjoy the game 🎲🎲🎲 refresh to get move the dice.
+  </footer>
+ <script >
+  var randomno1=Math.floor(Math.random()*6)+1;
+var randomno2=Math.floor(Math.random()*6)+1;
+// math.random() {0.1-0.99} by multiply it by 6 we get the num
+// between 0-5 but we need 1-6 so we just add 1
+var randomdiceimg1 ="dice"+randomno1+".png";
+var imgsrc1="images/"+randomdiceimg1;
+var randomdiceimg2="dice"+randomno2+".png";
+var imgsrc2="images/"+randomdiceimg2;
+
+var img1=document.querySelectorAll("img")[0];
+var img2=document.querySelectorAll("img")[1];
+img1.setAttribute("src",imgsrc1);
+img2.setAttribute("src",imgsrc2);
+if(randomno1>randomno2){
+  document.querySelector('h1').innerHTML="PLAYER 1 WIN 🎉🎊 ";
+}else if(randomno1<randomno2){
+  document.querySelector('h1').innerHTML="PLAYER 2 WIN 🎉🎊 ";
+}else if(randomno1==randomno2){
+  document.querySelector('h1').innerHTML="Draw";
+}
+</script>
+
+</html>
